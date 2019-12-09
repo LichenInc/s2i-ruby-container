@@ -46,6 +46,8 @@ ${RUBY_SCL}-rubygem-bundler \
     yum -y clean all --enablerepo='*' && \
     rpm -V ${INSTALL_PKGS}
 
+RUN scl enable rh-nodejs10 'npm install -g yarn'
+
 # Copy the S2I scripts from the specific language image to $STI_SCRIPTS_PATH
 COPY ./s2i/bin/ $STI_SCRIPTS_PATH
 
