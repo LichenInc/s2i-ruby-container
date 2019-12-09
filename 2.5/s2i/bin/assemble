@@ -20,6 +20,10 @@ if [ -n "$RUBYGEM_MIRROR" ]; then
 fi
 
 shopt -s dotglob
+if [ -d /tmp/artifacts ] && [ "$(ls /tmp/artifacts/ 2>/dev/null)" ]; then
+    echo "---> Restoring previous build artifacts ..."
+    mv -T --verbose /tmp/artifacts/bundle "${HOME}/bundle"
+fi
 echo "---> Installing application source ..."
 mv /tmp/src/* ./
 
