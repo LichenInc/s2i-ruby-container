@@ -22,7 +22,7 @@ fi
 shopt -s dotglob
 if [ "$(ls /tmp/artifacts/ 2>/dev/null)" ]; then
     echo "---> Restoring previous build artifacts ..."
-    mv -T --verbose /tmp/artifacts/* $HOME/.
+    mv --verbose /tmp/artifacts/* $HOME/.
 fi
 echo "---> Installing application source ..."
 mv /tmp/src/* ./
